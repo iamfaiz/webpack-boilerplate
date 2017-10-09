@@ -5,8 +5,8 @@ module.exports = {
     entry: ['./src/js/main.js', './src/sass/main.sass'],
 
     output: {
-        path: __dirname + '/dist/js',
-        filename: 'bundle.js'
+        path: __dirname + '/dist',
+        filename: 'js/bundle.js'
     },
 
     module: {
@@ -29,6 +29,6 @@ module.exports = {
     },
 
     plugins:[
-        new ExtractTextPlugin('../css/bundle.css')
+        new ExtractTextPlugin('css/bundle.css')
     ]
 };
