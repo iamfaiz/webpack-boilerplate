@@ -65,9 +65,20 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-console.log('Hello, world!');
+"use strict";
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Example = function Example() {
+    _classCallCheck(this, Example);
+
+    console.log('Example class instantiated.');
+};
+
+new Example();
 
 /***/ })
 /******/ ]);

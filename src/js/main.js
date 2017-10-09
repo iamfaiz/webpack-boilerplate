@@ -1,1 +1,7 @@
-console.log('Hello, world!');
+class Example {
+    constructor() {
+        console.log('Example class instantiated.')
+    }
+}
+
+(new Example);
