@@ -1,0 +1,11 @@
+{
+  "name": "webpack-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:iamfaiz/webpack-boilerplate.git",
+  "author": "Rana Faiz Ahmad <iamfaizahmed123@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^3.6.0"
+  }
+}
