@@ -2,6 +2,9 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var inProduction = (process.env.NODE_ENV === 'production');
+var PurifyCSSPlugin = require('purifycss-webpack');
+var glob = require('glob');
+var path = require('path');
 
 module.exports = {
     entry: ['./src/js/main.js', './src/sass/main.sass'],
@@ -47,6 +50,11 @@ module.exports = {
 
     plugins: [
         new ExtractTextPlugin('css/bundle.css'),
+
+        new PurifyCSSPlugin({
+            paths: glob.sync(path.join(__dirname, 'src/**/*{.hbs,.html}')),
+            minimize: inProduction
+        }),
 
         new HtmlWebpackPlugin({
             template: 'src/index.hbs',
