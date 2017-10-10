@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: ['./src/js/main.js', './src/sass/main.sass'],
@@ -34,11 +35,22 @@ module.exports = {
                         name: 'images/[name].[ext]'
                     }
                 }]
+            },
+
+            {
+                test: /\.hbs$/,
+                use: "handlebars-loader"
             }
         ],
     },
 
     plugins: [
-        new ExtractTextPlugin('css/bundle.css')
+        new ExtractTextPlugin('css/bundle.css'),
+
+        new HtmlWebpackPlugin({
+            template: 'src/index.hbs',
+            title: 'Home Page',
+            filename: 'index.html'
+        }),
     ]
 };
