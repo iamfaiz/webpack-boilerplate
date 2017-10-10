@@ -6,12 +6,12 @@ module.exports = {
 
     output: {
         path: __dirname + '/dist',
-        filename: 'js/bundle.js'
+        filename: 'js/bundle.js',
+        publicPath: '/'
     },
 
     module: {
-        loaders: [
-            {
+        loaders: [{
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
@@ -24,11 +24,21 @@ module.exports = {
                     use: ['css-loader', 'sass-loader'],
                     fallback: 'style-loader'
                 })
+            },
+
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'images/[name].[ext]'
+                    }
+                }]
             }
         ],
     },
 
-    plugins:[
+    plugins: [
         new ExtractTextPlugin('css/bundle.css')
     ]
 };
