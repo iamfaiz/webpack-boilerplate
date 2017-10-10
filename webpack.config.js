@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var inProduction = (process.env.NODE_ENV === 'production');
 
 module.exports = {
     entry: ['./src/js/main.js', './src/sass/main.sass'],
@@ -50,7 +51,20 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.hbs',
             title: 'Home Page',
-            filename: 'index.html'
+            filename: 'index.html',
+            minify: {
+                collapseWhitespace: inProduction
+            }
         }),
+
+        new webpack.LoaderOptionsPlugin({
+            minimize: inProduction
+        })
     ]
 };
+
+if (inProduction) {
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin()
+    );
+}

@@ -5,6 +5,11 @@
   "repository": "git@github.com:iamfaiz/webpack-boilerplate.git",
   "author": "Rana Faiz Ahmad <iamfaizahmed123@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --progress --hide-modules",
+    "watch": "webpack --progress --hide-modules --watch",
+    "production": "NODE_ENV=production webpack --progress --hide-modules"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
