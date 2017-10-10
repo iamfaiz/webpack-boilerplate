@@ -68,7 +68,12 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
             minimize: inProduction
         })
-    ]
+    ],
+
+    devServer: {
+        inline: true,
+        stats: 'errors-only'
+    }
 };
 
 if (inProduction) {

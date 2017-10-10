@@ -6,6 +6,7 @@
   "author": "Rana Faiz Ahmad <iamfaizahmed123@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "./node_modules/.bin/webpack-dev-server",
     "build": "webpack --progress --hide-modules",
     "watch": "webpack --progress --hide-modules --watch",
     "production": "NODE_ENV=production webpack --progress --hide-modules"
@@ -25,6 +26,7 @@
     "purifycss-webpack": "^0.7.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
   }
 }
